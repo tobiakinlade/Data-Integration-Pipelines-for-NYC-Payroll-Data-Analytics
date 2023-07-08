@@ -1,0 +1,9 @@
+{
+	"name": "tobiadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5b1cd478-d400-4a59-a669-90bb81169984",
+		"tenantId": "791072f4-0391-496c-bd1e-32c66774356e"
+	}
+}

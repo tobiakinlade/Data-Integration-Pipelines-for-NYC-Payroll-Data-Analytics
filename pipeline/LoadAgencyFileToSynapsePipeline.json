@@ -1,0 +1,41 @@
+{
+	"name": "LoadAgencyFileToSynapsePipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "LoadAgencyFileToSynapsePipeline",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "LoadAgencyFileToSynapse",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "AzureDataLakeStorage_Connection",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-tobi-a/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-07-08T08:32:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
